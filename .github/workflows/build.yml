@@ -23,7 +23,7 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: 安装 Flutter SDK
+      - name: 安装指定版本的 Flutter SDK
         uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.24.3'
@@ -35,8 +35,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install flet gspread pandas
 
+      - name: 配置环境变量跳过交互
+        run: echo "FLET_SUPPRESS_PROMPTS=true" >> $GITHUB_ENV
+
       - name: 执行打包 APK
-        env:
-          CI: "true"
         run: |
           flet build apk --verbose
