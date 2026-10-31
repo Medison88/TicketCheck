@@ -1,0 +1,21 @@
+name: Build Flet APK
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 编译 Android APK
+        uses: flet-dev/flet-build-action@v1
+        with:
+          target: apk
+          runner-python-version: "3.11"
+          bundled-python-version: "3.11"
+          build-number: ${{ github.run_number }}
