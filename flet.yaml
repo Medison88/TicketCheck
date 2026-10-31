@@ -3,5 +3,3 @@ app:
 
 requirements:
   - flet==0.25.0
-  - gspread
-  - pandas
