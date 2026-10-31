@@ -7,9 +7,6 @@ def main(page: ft.Page):
 
     input_tab = ft.Column(
         controls=[
-        spacing=15,
-        scroll=ft.ScrollMode.AUTO,
-        expand=true
             ft.Text("Ticket Purchase", size=22),
             ft.TextField(label="Date", width=300),
             ft.TextField(label="Draw", width=300),
@@ -33,6 +30,7 @@ def main(page: ft.Page):
         ],
         spacing=15,
         scroll=ft.ScrollMode.AUTO,
+        expand=True,
     )
 
     search_tab = ft.Column(
@@ -52,10 +50,11 @@ def main(page: ft.Page):
             ft.Text("Search page is working"),
         ],
         spacing=15,
+        scroll=ft.ScrollMode.AUTO,
+        expand=True,
     )
 
-    page.add(
-        tabs = ft.Tabs(
+    tabs = ft.Tabs(
         selected_index=0,
         animation_duration=300,
         expand=True,
