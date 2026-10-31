@@ -52,25 +52,34 @@ def main(page: ft.Page):
     )
 
     page.add(
-        ft.Tabs(
-            selected_index=0,
+        tabs = ft.Tabs(
+        selected_index=0,
+        animation_duration=300,
+        expand=True,
+        tabs=[
+            ft.Tab(
+                text="Input",
+                content=ft.Container(
+                    content=input_tab,
+                    padding=10,
+                    expand=True,
+                ),
+            ),
+            ft.Tab(
+                text="Search",
+                content=ft.Container(
+                    content=search_tab,
+                    padding=10,
+                    expand=True,
+                ),
+            ),
+        ],
+    )
+
+    page.add(
+        ft.Container(
+            content=tabs,
             expand=True,
-            tabs=[
-                ft.Tab(
-                    text="Input",
-                    content=ft.Container(
-                        content=input_tab,
-                        padding=10,
-                    ),
-                ),
-                ft.Tab(
-                    text="Search",
-                    content=ft.Container(
-                        content=search_tab,
-                        padding=10,
-                    ),
-                ),
-            ],
         )
     )
 
