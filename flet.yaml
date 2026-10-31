@@ -1,0 +1,7 @@
+# flet.yaml 配置文件
+app:
+  path: main.py
+requirements:
+  - flet
+  - gspread
+  - pandas
