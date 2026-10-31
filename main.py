@@ -1,5 +1,4 @@
 from datetime import datetime
-import json
 import flet as ft
 
 # 暂时注释掉 gspread 相关内容，排除所有底层 C 库兼容性引起的段错误
