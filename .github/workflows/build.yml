@@ -15,7 +15,7 @@ jobs:
       - name: 设置 Python 环境
         uses: actions/setup-python@v5
         with:
-        python-version: "3.11"
+          python-version: "3.11"
 
       - name: 设置 Java JDK
         uses: actions/setup-java@v4
@@ -26,7 +26,7 @@ jobs:
       - name: 安装 Flutter SDK
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.3' # 根据 Flet 要求适配的版本
+          flutter-version: '3.24.3'
           channel: 'stable'
           cache: true
 
