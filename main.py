@@ -7,6 +7,9 @@ def main(page: ft.Page):
 
     input_tab = ft.Column(
         controls=[
+        spacing=15,
+        scroll=ft.ScrollMode.AUTO,
+        expand=true
             ft.Text("Ticket Purchase", size=22),
             ft.TextField(label="Date", width=300),
             ft.TextField(label="Draw", width=300),
