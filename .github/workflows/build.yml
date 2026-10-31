@@ -23,10 +23,22 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
+      - name: 安装 Flutter SDK
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.3'
+          channel: 'stable'
+          cache: true
+
       - name: 安装项目依赖
         run: |
           python -m pip install --upgrade pip
           pip install flet==0.25.0 gspread pandas
+
+      - name: 验证 Flutter 环境
+        run: |
+          flutter --version
+          flutter doctor
 
       - name: 执行打包 APK
         run: |
