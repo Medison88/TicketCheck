@@ -23,20 +23,10 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: 安装指定版本的 Flutter SDK
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.24.3'
-          channel: 'stable'
-          cache: true
-
       - name: 安装项目依赖
         run: |
           python -m pip install --upgrade pip
-          pip install flet gspread pandas
-
-      - name: 配置环境变量跳过交互
-        run: echo "FLET_SUPPRESS_PROMPTS=true" >> $GITHUB_ENV
+          pip install flet==0.25.0 gspread pandas
 
       - name: 执行打包 APK
         run: |
