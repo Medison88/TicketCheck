@@ -36,5 +36,7 @@ jobs:
           pip install flet gspread pandas
 
       - name: 执行打包 APK
+        env:
+          CI: "true"
         run: |
-          flet build apk -y --verbose
+          flet build apk --verbose
